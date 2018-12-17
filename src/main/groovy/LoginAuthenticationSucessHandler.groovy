@@ -12,15 +12,14 @@ import javax.servlet.http.HttpServletResponse
 
 class LoginAuthenticationSucessHandler extends RestAuthenticationSuccessHandler implements EventPublisher {
 
-//    @Autowired
-//    UserService userService
+    UserService userService
 
     @Override
     void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         super.onAuthenticationSuccess(request, response, authentication)
         AccessToken accessToken = (AccessToken)authentication
         GrailsUser principal = (GrailsUser)accessToken.principal
-//        userService.loginOK(principal?.username)
+        userService?.loginOK(principal?.username)
     }
 
 }
