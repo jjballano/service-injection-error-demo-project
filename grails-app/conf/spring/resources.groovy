@@ -4,6 +4,6 @@ beans = {
     restAuthenticationSuccessHandler(LoginAuthenticationSucessHandler) {
         renderer = ref('accessTokenJsonRenderer')
 // Comment following line and the test will pass
-//        userService = ref('userService')
+        userService = ref('userService')
     }
 }
